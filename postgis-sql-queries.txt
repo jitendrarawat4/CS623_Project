@@ -74,3 +74,8 @@ SELECT postgis_full_version();
 	EXPLAIN SELECT * FROM us_states ORDER BY id DESC LIMIT 10;
 
 	EXPLAIN SELECT * FROM us_counties ORDER BY id DESC LIMIT 10;
+
+--10 Retrieve Locations of county "Geneva"
+
+select geo_id,name,st_astext (geom) as location
+from us_counties where (name='Geneva');
